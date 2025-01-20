@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard </title>
+
+    <link rel="icon" type="image/x-icon" href="assets/img/LogoProxenio.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body class="">
+
+    <div id="layoutSidenav" class="min-vh-100">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav sb-sidenav-light border-end  bg-white p-5" id="sidenavAccordion"
+                style="padding-right: 5px !important;">
+                <div class="sb-sidenav-menu">
+                    <div class="nav navside">
+                        <div class="text-maroon d-flex align-items-center mb-5 ">
+                            <!-- Navbar Brand-->
+                            <img src="assets/img/LogoProxenio.png" width="45px" />
+                            <a class="navbar-brand ps-1 fs-5 fw-semibold" href="index.html">Proxenio</a>
+                        </div>
+                        <a class="nav-link bg-gradient rounded-3 mb-2" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="bi bi-columns-gap"></i></div>
+                            Dashboard
+                        </a>
+                        <a class="nav-link rounded-3 mb-2" href="UserDetails.html">
+                            <div class="sb-nav-link-icon"><i class="bi bi-people"></i></div>
+                            Users
+                        </a>
+                        <a class="nav-link rounded-3 mb-2" href="Matches.html">
+                            <div class="sb-nav-link-icon"><i class="bi bi-person-check"></i></div>
+                            Matches
+                        </a>
+                        <a class="nav-link rounded-3 mb-2" href="Payments.html">
+                            <div class="sb-nav-link-icon"><i class="bi bi-currency-dollar"></i></div>
+                            Payments
+                        </a>
+                        <a class="nav-link rounded-3 mb-2" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="bi bi-card-text"></i></div>
+                            Content
+                        </a>
+                        <a class="nav-link rounded-3 mb-2" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="bi bi-person-square"></i></div>
+                            Profile
+                        </a>
+                        <a class="nav-link rounded-3 mb-2" href="Settings.html">
+                            <div class="sb-nav-link-icon"><i class="bi bi-gear"></i></div>
+                            Settings
+                        </a>
+                        <a class="nav-link rounded-3 mb-2" href="Roles.html">
+                            <div class="sb-nav-link-icon"><i class="bi bi-fingerprint"></i></div>
+                            Roles
+                        </a>
+                        <!-- <a class="nav-link rounded-3 mb-2" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="bi bi-box-arrow-right"></i></div>
+                                Logout
+                            </a> -->
+                    </div>
+                </div>
+                <div class="p-4">
+                    <a class="nav-link rounded-3 mb-2 d-flex align-items-center" href="index.html">
+                        <div class="sb-nav-link-icon me-2">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </div>
+                        Logout
+                    </a>
+                </div>
+
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-5">
+                    <div class="row align-items-center mt-5 mb-4">
+                        <!-- Left Section -->
+                        <div class="col-md-6">
+                            <div class="">
+                                <h2>Settings </h2>
+                            </div>
+                        </div>
+
+                        <!-- Right Section -->
+                        <div class="col-md-6 d-flex justify-content-end align-items-center">
+                            <!-- Profile Image -->
+                            <img src="assets/img/user.png" width="60px" height="60px"
+                                class="rounded-pill border me-3 img-fluid" />
+                            <!-- Name and Email -->
+                            <div class="me-4 text-start me-5">
+                                <h5 class="mb-0">Abubakar</h5>
+                                <p class="mb-0 text-muted">abubakar.aziz@example</p>
+                            </div>
+                            <!-- Dropdown -->
+                            <ul class="navbar-nav bg-light ms-5">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link bg-white" id="navbarDropdown" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-earth fs-4"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider" />
+                                        </li>
+                                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5>Your Charges List</h5>
+                        <button class="btn btn-outline-danger px-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New</button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                            <div class="table-responsive bg-lightergray p-3  text-grayer">
+                                <table class="table table-hover tablespace ">
+                                    <thead class="align-items-center tblHead">
+                                        <tr>
+                                            <th>Transaction Type</th>
+                                            <th>Amount </th>
+                                            <th class="text-end">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-grayer tblBody">
+                                        <tr>
+                                            <td>Sign in</td>
+                                            <td>$15</td>
+                                            <td class="text-end align-middle">
+                                                <div class="d-flex justify-content-end gap-1">
+                                                    <button class="btn btn-md " title="Send Edit">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </button>
+                                                    <button class="btn btn-md " title="View Delete">
+                                                        <i class="bi bi-trash3 text-danger"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sign in</td>
+                                            <td>$15</td>
+                                            <td class="text-end align-middle">
+                                                <div class="d-flex justify-content-end gap-1">
+                                                    <button class="btn btn-md " title="Send Edit">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </button>
+                                                    <button class="btn btn-md " title="View Delete">
+                                                        <i class="bi bi-trash3 text-danger"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sign in</td>
+                                            <td>$15</td>
+                                            <td class="text-end align-middle">
+                                                <div class="d-flex justify-content-end gap-1">
+                                                    <button class="btn btn-md " title="Send Edit">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </button>
+                                                    <button class="btn btn-md " title="View Delete">
+                                                        <i class="bi bi-trash3 text-danger"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sign in</td>
+                                            <td>$15</td>
+                                            <td class="text-end align-middle">
+                                                <div class="d-flex justify-content-end gap-1">
+                                                    <button class="btn btn-md " title="Send Edit">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </button>
+                                                    <button class="btn btn-md " title="View Delete">
+                                                        <i class="bi bi-trash3 text-danger"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-white border-0">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label class="form-label">Transaction type</label>
+                                            <input type="text" class="form-control" placeholder="Enter here">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Amount</label>
+                                            <input type="text" class="form-control" placeholder="Enter here">
+                                        </div>
+
+                                        <div class="d-grid pt-3">
+                                            <button type="button" class="btn btn-danger"> Save</button>
+                                        </div>
+                            
+                                    </form>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+</body>
+
+</html>
