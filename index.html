@@ -1,138 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Dashboard - Admin</title>
 
-        <link rel="icon" type="image/x-icon" href="assets/img/LogoProxenio.png">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Proxenio</title>
 
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="assets/img/LogoProxenio.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
 
-        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts  -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        <!-- Bootstrap Icons -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    </head>
-    <body class="">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
-        <div id="layoutSidenav" class="min-vh-100">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav sb-sidenav-light border-end  bg-white p-5" id="sidenavAccordion" style="padding-right: 5px !important;">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav navside">
-                            <div class="text-maroon d-flex align-items-center mb-5 ">
-                                <!-- Navbar Brand-->
-                                 <img src="assets/img/LogoProxenio.png" width="45px" />
-                                <a class="navbar-brand ps-1 fs-5 fw-semibold" href="index.html">Proxenio</a>
-                            </div>
-                            <a class="nav-link bg-gradient rounded-3 mb-2" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="bi bi-columns-gap"></i></div>
-                                Dashboard
-                            </a>
-                            <a class="nav-link rounded-3 mb-2" href="UserDetails.html">
-                                <div class="sb-nav-link-icon"><i class="bi bi-people"></i></div>
-                                Users
-                            </a>
-                            <a class="nav-link rounded-3 mb-2" href="Matches.html">
-                                <div class="sb-nav-link-icon"><i class="bi bi-person-check"></i></div>
-                                Matches
-                            </a>
-                            <a class="nav-link rounded-3 mb-2" href="Payments.html">
-                                <div class="sb-nav-link-icon"><i class="bi bi-currency-dollar"></i></div>
-                                Payments
-                            </a>
-                            <a class="nav-link rounded-3 mb-2" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="bi bi-card-text"></i></div>
-                                Content
-                            </a>
-                            <a class="nav-link rounded-3 mb-2" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="bi bi-person-square"></i></div>
-                                Profile
-                            </a>
-                            <a class="nav-link rounded-3 mb-2" href="Settings.html">
-                                <div class="sb-nav-link-icon"><i class="bi bi-gear"></i></div>
-                                Settings
-                            </a>
-                            <a class="nav-link rounded-3 mb-2" href="Roles.html">
-                                <div class="sb-nav-link-icon"><i class="bi bi-fingerprint"></i></div>
-                                Roles
-                            </a>
-                            <!-- <a class="nav-link rounded-3 mb-2" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="bi bi-box-arrow-right"></i></div>
-                                Logout
-                            </a> -->
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <a class="nav-link rounded-3 mb-2 d-flex align-items-center" href="index.html">
-                            <div class="sb-nav-link-icon me-2">
-                                <i class="bi bi-box-arrow-right"></i>
-                            </div>
-                            Logout
-                        </a>
-                    </div>
-                    
-                </nav>
-            </div>
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-5">
-                        <div class="row align-items-center mt-4 mb-4">
-                            <!-- Left Section -->
-                            <div class="col-md-6">
-                                <div class="mt-4">
-                                    <h2>Good Morning,</h2>
-                                </div>
-                            </div>
-                        
-                            <!-- Right Section -->
-                            <div class="col-md-6 d-flex justify-content-end align-items-center">
-                                <!-- Profile Image -->
-                                <img src="assets/img/user.png" width="60px" height="60px" class="rounded-pill border me-3" />
-                                <!-- Name and Email -->
-                                <div class="me-4 text-start me-5">
-                                    <h5 class="mb-0">Abubakar</h5>
-                                    <p class="mb-0 text-muted">abubakar.aziz@example</p>
-                                </div>
-                                <!-- Dropdown -->
-                                <ul class="navbar-nav bg-light ms-5">
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link bg-white" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fas fa-earth"></i>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="#!">English</a></li>
-                                            <li><a class="dropdown-item" href="#!">English</a></li>
-                                            
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+</head>
 
+<body class="bg-dashboard">
 
-                        <div class="row">
-                            
-                        </div>
-                        
-                       
-                    </div>
-                </main>
+  <button class="toggle-btn" id="toggleSidebar">
+    <i class="bi bi-list"></i>
+  </button>
 
-            </div>
+  <!-- Sidebar -->
+  <div class="sidebar border-end" id="sidebar">
+    <div class="d-flex justify-content-start align-items-center mb-4">
+      <img src="assets/img/LogoProxenio.png" width="45px" alt="Logo">
+      <a class="navbar-brand ps-1 fs-5 fw-medium color-maroon" href="index.html">Proxenio</a>
+    </div>
+    <div class="sidebar-menu d-flex flex-column justify-content-center">
+      <a href="index.html" class="menu-item">
+        <i class="bi bi-house-door"></i>
+        <span>Dashboard</span>
+      </a>
+      <a href="Users.html" class="menu-item">
+        <i class="bi bi-people"></i>
+        <span>Users</span>
+      </a>
+      <a href="Matches.html" class="menu-item">
+        <i class="bi bi-heart"></i>
+        <span>Matches</span>
+      </a>
+      <a href="payment.html" class="menu-item">
+        <i class="bi bi-currency-dollar"></i>
+        <span>Payments</span>
+      </a>
+      <a href="Content.html" class="menu-item">
+        <i class="bi bi-file-text"></i>
+        <span>Content</span>
+      </a>
+      <a href="Profile.html" class="menu-item">
+        <i class="bi bi-person"></i>
+        <span>Profile</span>
+      </a>
+      <a href="Settings.html" class="menu-item">
+        <i class="bi bi-gear"></i>
+        <span>Settings</span>
+      </a>
+      <a href="#" class="menu-item">
+        <i class="bi bi-box-arrow-right"></i>
+        <span>Logout</span>
+      </a>
+    </div>
+
+  </div>
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Content -->
+  <section class="content" id="content">
+    <main>
+      <div class="row align-items-center mb-5">
+        <!-- Left Section -->
+        <div class="col-md-6">
+          <div class="d-flex align-items-center fs-4">
+            <span>Good Morning, <strong>Samantha</strong></span>
+          </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-       
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
-    </body>
+
+        <!-- Right Section -->
+        <div class="col-md-6 d-none d-md-flex justify-content-end align-items-center">
+
+          <img src="assets/img/user.png" width="60px" height="60px" class="rounded-pill border me-3 img-fluid" />
+          <div class="text-start me-5">
+            <h5 class="mb-0 text-muted">Samantha</h5>
+            <p class="mb-0 text-muted">Samantha@example</p>
+          </div>
+          <!-- Dropdown -->
+          <ul class="navbar-nav bg-light ms-5">
+            <li class="nav-item dropdown">
+              <a class="nav-link bg-white" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-globe-americas fs-3"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#!">English</a></li>
+                <li><a class="dropdown-item" href="#!">Greek</a></li>
+
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <div class="card shadow-sm border-0 p-2 mb-3" style="width: 100%;">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between mb-3">
+                    <i class="bi bi-people fs-3"></i>
+                    <span class="fs-3 fw-semibold text-green">1,234</span>
+                  </div>
+                  <h6 class=" mb-1 text-black ">Total Registered Users
+                  </h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card shadow-sm border-0 p-2 mb-3" style="width: 100%;">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between mb-3">
+                    <i class="bi bi-people fs-3"></i>
+                    <span class="fs-3 fw-semibold text-green">1,234</span>
+                  </div>
+                  <h6 class="mb-1 text-black ">Active Users</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card shadow-sm border-0 p-2 mb-3" style="width: 100%;">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between mb-3">
+                    <i class="bi bi-person-check fs-3"></i>
+                    <span class="fs-3 fw-semibold text-green">1,234</span>
+                  </div>
+                  <h6 class="mb-1 text-black ">Matches Users</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <canvas id="revenue" class="" style="width:100%; "></canvas>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <h4 class="fw-medium fs-22 py-4">User Engagement</h4>
+          
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="bg-white shadow-sm rounded-3 p-2 px-3">
+                  <i class="bi bi-youtube fs-3 text-green"></i>
+                </div>
+                <div>
+                  <span>Total Videos Uploaded</span>
+                </div>
+                <div class="badge bg-green-sec text-green">
+                  <span>$ 150.0</span>
+                </div>
+              </div>
+          
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="bg-white shadow-sm rounded-3 p-2 px-3">
+                  <i class="bi bi-youtube fs-3 text-green"></i>
+                </div>
+                <div>
+                  <span>Total Videos Uploaded</span>
+                </div>
+                <div class="badge bg-green-sec text-green">
+                  <span>$ 150.0</span>
+                </div>
+              </div>
+          
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="bg-white shadow-sm rounded-3 p-2 px-3">
+                  <i class="bi bi-youtube fs-3 text-green"></i>
+                </div>
+                <div>
+                  <span>Total Videos Uploaded</span>
+                </div>
+                <div class="badge bg-green-sec text-green">
+                  <span>$ 150.0</span>
+                </div>
+              </div>
+          
+          
+            </div>
+
+            <div class="col-md-6">
+              <h4 class="fw-medium fs-22 py-4">Recent Matches</h4>
+              
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="bg-white shadow-sm rounded-3 p-2 px-3 me-4">
+                  <i class="bi bi-heart fs-3 text-green"></i> 
+                </div>
+                <div>
+                  <span>@username and @username are a match, 
+                    contact them now.</span>
+                </div>
+
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="bg-white shadow-sm rounded-3 p-2 px-3 me-4">
+                  <i class="bi bi-heart fs-3 text-green"></i> 
+                </div>
+                <div>
+                  <span>@username and @username are a match, 
+                    contact them now.</span>
+                </div>
+
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="bg-white shadow-sm rounded-3 p-2 px-3 me-4">
+                  <i class="bi bi-heart fs-3 text-green"></i> 
+                </div>
+                <div>
+                  <span>@username and @username are a match, 
+                    contact them now.</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row ">
+            <div class="col-md-12 mb-5">
+              <div class="card bg-light border-0 shadow-sm p-4 rounded-5 border-bottom border-5 border-danger">
+                <h5 class="mb-4 fs-4">Your Earnings</h5>
+                  <div class="row">
+                    <div class="col-4 col-md-4 text-muted fw-light">
+                      <p class="text-muted fw-light fs-12">Total Earning <br />
+                        <span class="color-maroon p-2 fs-16">$15,000</span>
+                      </p>
+                    </div>
+                    <div class="col-4 col-md-4">
+                      <p class="text-muted fw-light fs-12">Pending <br />
+                        <span class="text-black p-2 fs-16">$15</span>
+                      </p>
+                    </div>
+                    <div class="col-4 col-md-4">
+                      <p class="text-muted fw-light fs-12">In Review <br />
+                        <span class="text-black p-2 fs-16">$67</span>
+                      </p>
+                    </div>
+
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-12 mb-4">
+
+              <h4 class="fw-medium fs-22 py-4">Top Cities</h4>
+              <div>
+                <div class="progress bg-fff align-middle my-4" role="progressbar" style="height: 30px;" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                  <div class="bg-green-linear py-1 rounded-3"  style="width: 75%"> <span >Indonesia - 75% </span></div>
+                </div>
+
+                <div class="progress bg-fff align-middle  my-4" role="progressbar" style="height: 30px;" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                  <div class="bg-green-linear py-1 rounded-3"  style="width: 50%"> <span >Indonesia - 75% </span></div>
+                </div>
+
+                <div class="progress bg-fff align-middle  my-4" role="progressbar" style="height: 30px;" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                  <div class="bg-green-linear py-1 rounded-3"  style="width: 30%"> <span >Indonesia - 75% </span></div>
+                </div>
+
+              </div>
+             
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-12 mb-3">
+
+              <h4 class="fw-medium fs-22 py-4">User Stats</h4>
+              <div>
+
+                <canvas id="userstat" style="width:100%;max-width:500px"></canvas>
+
+              </div>
+             
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+
+    <script>
+      var xValues = ["Jan", "Feb", "March", "Apr", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      var yValues = [55, 49, 44, 24, 15, 55, 49, 44, 24, 15 ,14];
+      var barColors = [
+        "#CCEABB",
+        "#FDCB9E",
+        "#CCEABB",
+        "#FDCB9E",
+        "#CCEABB",
+        "#FDCB9E",
+        "#CCEABB",
+        "#FDCB9E",
+        "#CCEABB",
+        "#FDCB9E",
+        "#CCEABB",
+
+      ];
+      
+      new Chart("revenue", {
+        type: "bar",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          legend: {display: false},
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }],
+          }
+        }
+      });
+      </script>
+      
+
+    <script>
+      var xValues = ["Male", "Female" ];
+      var yValues = [65, 40];
+      var barColors = [
+        "#CCEABB",
+        "#FDCB9E"
+      ];
+      
+      new Chart("userstat", {
+        type: "doughnut",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+          }
+        }
+      });
+      </script>
+
+  <script src="js/script.js"></script>
+</body>
+
 </html>
