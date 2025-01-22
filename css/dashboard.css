@@ -222,6 +222,14 @@ body {
     background: #FFFFFF !important;
 }
 
+.color-gray{
+    color: #8B8B8B !important;
+}
+
+.bg-gray{
+    color: #8B8B8B !important;
+}
+
 .thead-bg>tr>th {
     padding: 15px 5px;
     background: #F6F6F6 !important;
