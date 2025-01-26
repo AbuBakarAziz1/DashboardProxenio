@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Proxenio</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/img/LogoProxenio.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <!-- Google Fonts  -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* Step Circle Styling */
+        .step {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            background-color: #f8d7da;
+            color: #dc3545;
+            border: 2px solid #dc3545;
+        }
+
+        .step.active {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        /* Step Title Styling */
+        .step-title {
+            font-weight: 500;
+            color: #333;
+        }
+
+        /* Make the step-indicator container look good */
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .step-indicator {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="bg-dashboard">
+
+    <button class="toggle-btn" id="toggleSidebar">
+        <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <div class="sidebar border-end" id="sidebar">
+        <div class="d-flex justify-content-start align-items-center mb-4">
+            <img src="assets/img/LogoProxenio.png" width="45px" alt="Logo">
+            <a class="navbar-brand ps-1 fs-5 fw-medium color-maroon" href="index.html">Proxenio</a>
+        </div>
+        <div class="sidebar-menu d-flex flex-column justify-content-center">
+            <a href="Home.html" class="menu-item">
+                <i class="bi bi-house-door"></i>
+                <span>Explore Profile</span>
+            </a>
+            <a href="MyProfile.html" class="menu-item">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+            </a>
+            <a href="MyMatches.html" class="menu-item">
+                <i class="bi bi-heart"></i>
+                <span>My Matches</span>
+            </a>
+            <a href="Settings.html" class="menu-item">
+                <i class="bi bi-gear"></i>
+                <span>Settings</span>
+            </a>
+            <a href="#" class="menu-item">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+
+    </div>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Content -->
+    <section class="content" id="content">
+        <main>
+            <div class="row align-items-center mb-5">
+                <!-- Left Section -->
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center fs-4">
+                        <span>Good Morning, <strong>Samantha</strong></span>
+                    </div>
+                </div>
+
+                <!-- Right Section -->
+                <div class="col-md-6 d-none d-md-flex justify-content-end align-items-center">
+
+                    <img src="assets/img/user.png" width="60px" height="60px"
+                        class="rounded-pill border me-3 img-fluid" />
+                    <div class="text-start me-5">
+                        <h5 class="mb-0 text-muted">Samantha</h5>
+                        <p class="mb-0 text-muted">Samantha@example</p>
+                    </div>
+                    <!-- Dropdown -->
+                    <ul class="navbar-nav bg-light ms-5">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link bg-white" id="navbarDropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-globe-americas fs-3"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">English</a></li>
+                                <li><a class="dropdown-item" href="#!">Greek</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card shadow-sm border-0 bg-fff p-4 rounded-4 ">
+
+                        <!-- Step Indicator -->
+                        <div class="step-indicator">
+                            <!-- Step 1 -->
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="step active">1</div>
+                                <div class="step-title">Profile Creation</div>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="step">2</div>
+                                <div class="step-title">Profile Details</div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="step">3</div>
+                                <div class="step-title">Video Introduction</div>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="step">4</div>
+                                <div class="step-title">Review and Submit</div>
+                            </div>
+                        </div>
+
+                        <!-- Form Section -->
+                        <form>
+                            <!-- Profile Creation Header -->
+                            <h4 class="mb-4">Profile Creation</h4>
+
+                            <div class="row g-3">
+                                <!-- Left Column -->
+                                <div class="col-md-6">
+                                    <!-- Full Name -->
+                                    <div class="mb-3 row">
+                                        <label for="fullName" class="col-sm-4 col-form-label">Full Name <span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="fullName"
+                                                placeholder="Enter here">
+                                        </div>
+                                    </div>
+
+                                    <!-- Age -->
+                                    <div class="mb-3 row">
+                                        <label for="age" class="col-sm-4 col-form-label">Age <span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="age" placeholder="Enter here">
+                                        </div>
+                                    </div>
+
+                                    <!-- Email Address -->
+                                    <div class="mb-3 row">
+                                        <label for="email" class="col-sm-4 col-form-label">Email Address <span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="email" class="form-control" id="email"
+                                                placeholder="Enter here">
+                                        </div>
+                                    </div>
+
+                                    <!-- City -->
+                                    <div class="mb-3 row">
+                                        <label for="city" class="col-sm-4 col-form-label">City <span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="city" placeholder="Enter here">
+                                        </div>
+                                    </div>
+
+                                    <!-- Religion -->
+                                    <div class="mb-3 row">
+                                        <label for="religion" class="col-sm-4 col-form-label">Religion</label>
+                                        <div class="col-sm-8">
+                                            <select class="form-select" id="religion">
+                                                <option selected>Select Here</option>
+                                                <option>Religion 1</option>
+                                                <option>Religion 2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Profession -->
+                                    <div class="mb-3 row">
+                                        <label for="profession" class="col-sm-4 col-form-label">Profession</label>
+                                        <div class="col-sm-8">
+                                            <select class="form-select" id="profession">
+                                                <option selected>Select Here</option>
+                                                <option>Profession 1</option>
+                                                <option>Profession 2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <!-- Right Column -->
+                                <div class="col-md-6">
+
+                                    <!-- Gender -->
+                                    <div class="mb-3 row">
+                                        <label for="gender" class="col-sm-4 col-form-label">Gender <span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="gender"
+                                                placeholder="Enter here">
+                                        </div>
+                                    </div>
+
+                                    <!-- Phone Number -->
+                                    <div class="mb-3 row">
+                                        <label for="phone" class="col-sm-4 col-form-label">Phone Number <span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="phone" placeholder="Enter here">
+                                        </div>
+                                    </div>
+
+                                    <!-- Country -->
+                                    <div class="mb-3 row">
+                                        <label for="country" class="col-sm-4 col-form-label">Country <span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="country"
+                                                placeholder="Enter here">
+                                        </div>
+                                    </div>
+
+                                    <!-- State/Province -->
+                                    <div class="mb-3 row">
+                                        <label for="state" class="col-sm-4 col-form-label">State/Province <span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="state" placeholder="Enter here">
+                                        </div>
+                                    </div>
+
+                                    <!-- Education -->
+                                    <div class="mb-3 row">
+                                        <label for="education" class="col-sm-4 col-form-label">Education</label>
+                                        <div class="col-sm-8">
+                                            <select class="form-select" id="education">
+                                                <option selected>Select Here</option>
+                                                <option>High School</option>
+                                                <option>Bachelor's Degree</option>
+                                                <option>Master's Degree</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Profile Photo -->
+                                    <div class="mb-3 row">
+                                        <label for="profilePhoto" class="col-sm-4 col-form-label">Profile Photo <span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="file" class="form-control" id="profilePhoto">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="d-flex justify-content-end mt-4">
+                                <button type="submit" class="btn btn-danger px-5">Next</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+            </div>
+        </main>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

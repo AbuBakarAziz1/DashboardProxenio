@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Proxenio</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/img/LogoProxenio.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <!-- Google Fonts  -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        .card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .card img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 15px;
+        }
+
+        .location-btn {
+            font-size: 0.85rem;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 5px 10px;
+        }
+
+        .location-btn:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        </style>
+
+</head>
+
+<body class="bg-dashboard">
+
+    <button class="toggle-btn" id="toggleSidebar">
+        <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <div class="sidebar border-end" id="sidebar">
+        <div class="d-flex justify-content-start align-items-center mb-4">
+            <img src="assets/img/LogoProxenio.png" width="45px" alt="Logo">
+            <a class="navbar-brand ps-1 fs-5 fw-medium color-maroon" href="index.html">Proxenio</a>
+        </div>
+        <div class="sidebar-menu d-flex flex-column justify-content-center">
+            <a href="Home.html" class="menu-item">
+                <i class="bi bi-house-door"></i>
+                <span>Explore Profile</span>
+            </a>
+            <a href="MyProfile.html" class="menu-item">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+            </a>
+            <a href="MyMatches.html" class="menu-item">
+                <i class="bi bi-heart"></i>
+                <span>My Matches</span>
+            </a>
+            <a href="Settings.html" class="menu-item">
+                <i class="bi bi-gear"></i>
+                <span>Settings</span>
+            </a>
+            <a href="#" class="menu-item">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+
+    </div>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Content -->
+    <section class="content" id="content">
+        <main>
+            <div class="row align-items-center mb-5">
+                <!-- Left Section -->
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center fs-4">
+                        <span>Good Morning, <strong>Samantha</strong></span>
+                    </div>
+                </div>
+
+                <!-- Right Section -->
+                <div class="col-md-6 d-none d-md-flex justify-content-end align-items-center">
+
+                    <img src="assets/img/user.png" width="60px" height="60px"
+                        class="rounded-pill border me-3 img-fluid" />
+                    <div class="text-start me-5">
+                        <h5 class="mb-0 text-muted">Samantha</h5>
+                        <p class="mb-0 text-muted">Samantha@example</p>
+                    </div>
+                    <!-- Dropdown -->
+                    <ul class="navbar-nav bg-light ms-5">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link bg-white" id="navbarDropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-globe-americas fs-3"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">English</a></li>
+                                <li><a class="dropdown-item" href="#!">Greek</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class=" pb-2">
+                        <!-- Tabs -->
+                        <ul class="nav" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link color-maroon" id="hearts-sent-tab" data-bs-toggle="tab"
+                                    data-bs-target="#hearts-sent" type="button" role="tab" aria-controls="hearts-sent"
+                                    aria-selected="true">
+                                    Hearts Sent
+                                    <span class="color-maroon" style="width: 15px; height: 2px;"> </span>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link text-black" id="hearts-received-tab" data-bs-toggle="tab"
+                                    data-bs-target="#hearts-received" type="button" role="tab"
+                                    aria-controls="hearts-received" aria-selected="false">
+                                    Hearts Received
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link text-black" id="matches-made-tab" data-bs-toggle="tab"
+                                    data-bs-target="#matches-made" type="button" role="tab" aria-controls="matches-made"
+                                    aria-selected="false">
+                                    Matches Made
+                                </button>
+                            </li>
+                        </ul>
+
+                        <!-- Tab Content -->
+                        <div class="tab-content pt-3" id="myTabContent">
+                            <!-- Hearts Sent Tab -->
+                            <div class="tab-pane fade show  mb-4" id="hearts-sent" role="tabpanel"
+                                aria-labelledby="hearts-sent-tab">
+                                <div class="row g-3">
+                                    <!-- Card 1 -->
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <img src="assets/img/user.png" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Jessica Smith</h5>
+                                                <p class="card-text">Hey there! I'm an architect, traveler, and...</p>
+                                                <button class="location-btn"><i class="bi bi-geo-alt-fill"></i>
+                                                    Location</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card 2 -->
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <img src="assets/img/user.png" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Jessica Smith</h5>
+                                                <p class="card-text">Hey there! I'm an architect, traveler, and...</p>
+                                                <button class="location-btn"><i class="bi bi-geo-alt-fill"></i>
+                                                    Location</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card 3 -->
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <img src="assets/img/user.png" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Jessica Smith</h5>
+                                                <p class="card-text">Hey there! I'm an architect, traveler, and...</p>
+                                                <button class="location-btn"><i class="bi bi-geo-alt-fill"></i>
+                                                    Location</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Hearts Received Tab -->
+                            <div class="tab-pane fade" id="hearts-received" role="tabpanel"
+                                aria-labelledby="hearts-received-tab">
+                                <div class="row g-3">
+                                    <!-- Card 1 -->
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <img src="assets/img/user.png" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Jessica Smith</h5>
+                                                <p class="card-text">Hey there! I'm an architect, traveler, and...</p>
+                                                <button class="location-btn"><i class="bi bi-geo-alt-fill"></i>
+                                                    Location</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card 2 -->
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <img src="assets/img/user.png" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Jessica Smith</h5>
+                                                <p class="card-text">Hey there! I'm an architect, traveler, and...</p>
+                                                <button class="location-btn"><i class="bi bi-geo-alt-fill"></i>
+                                                    Location</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card 3 -->
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <img src="assets/img/user.png" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Jessica Smith</h5>
+                                                <p class="card-text">Hey there! I'm an architect, traveler, and...</p>
+                                                <button class="location-btn"><i class="bi bi-geo-alt-fill"></i>
+                                                    Location</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Matches Made Tab -->
+                            <div class="tab-pane fade" id="matches-made" role="tabpanel"
+                                aria-labelledby="matches-made-tab">
+                                <div class="row g-3">
+                                    <!-- Card 1 -->
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <img src="assets/img/user.png" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Jessica Smith</h5>
+                                                <p class="card-text">Hey there! I'm an architect, traveler, and...</p>
+                                                <button class="location-btn"><i class="bi bi-geo-alt-fill"></i>
+                                                    Location</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card 2 -->
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <img src="assets/img/user.png" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Jessica Smith</h5>
+                                                <p class="card-text">Hey there! I'm an architect, traveler, and...</p>
+                                                <button class="location-btn"><i class="bi bi-geo-alt-fill"></i>
+                                                    Location</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card 3 -->
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <img src="assets/img/user.png" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Jessica Smith</h5>
+                                                <p class="card-text">Hey there! I'm an architect, traveler, and...</p>
+                                                <button class="location-btn"><i class="bi bi-geo-alt-fill"></i>
+                                                    Location</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+            </div>
+        </main>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
