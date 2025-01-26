@@ -146,7 +146,7 @@
                             <!-- Step 1 -->
                             <a href="Home.html" class="text-decoration-none text-reset">
                                 <div class="d-flex align-items-center gap-3">
-                                    <div class="step active">1</div>
+                                    <div class="step ">1</div>
                                     <div class="step-title">Profile Creation</div>
                                 </div>
                             </a>
@@ -154,7 +154,7 @@
                             <!-- Step 2 -->
                             <a href="ProfileDetail.html" class="text-decoration-none text-reset">
                                 <div class="d-flex align-items-center gap-3">
-                                    <div class="step ">2</div>
+                                    <div class="step active">2</div>
                                     <div class="step-title">Profile Details</div>
                                 </div>
                             </a>
@@ -179,138 +179,45 @@
                         <!-- Form Section -->
                         <form>
                             <!-- Profile Creation Header -->
-                            <h4 class="mb-4">Profile Creation</h4>
+                            <h4 class="mb-4">Profile Details</h4>
 
                             <div class="row g-3">
-                                <!-- Left Column -->
-                                <div class="col-md-6">
-                                    <!-- Full Name -->
+
+                                <div class="col-md-12">
                                     <div class="mb-3 row">
-                                        <label for="fullName" class="col-sm-4 col-form-label">Full Name <span
+                                        <label for="fullName" class="col-sm-2 col-form-label">About Me <span
                                                 class="text-danger">*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="fullName"
-                                                placeholder="Enter here">
+                                        <div class="col-sm-10">
+                                            <textarea type="text" class="form-control" rows="4" id=""
+                                                placeholder="Enter here"> </textarea>
                                         </div>
                                     </div>
 
-                                    <!-- Age -->
+                                </div>
+                                <!-- Left Column -->
+                                <div class="col-md-6">
+
                                     <div class="mb-3 row">
-                                        <label for="age" class="col-sm-4 col-form-label">Age <span
+                                        <label for="fullName" class="col-sm-4 col-form-label">Travel interests <span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="" placeholder="Enter here">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Right Column -->
+                                <div class="col-md-6">
+
+                                    <div class="mb-3 row">
+                                        <label for="age" class="col-sm-4 col-form-label">Hobbies and Interests <span
                                                 class="text-danger">*</span></label>
                                         <div class="col-sm-8">
                                             <input type="number" class="form-control" id="age" placeholder="Enter here">
                                         </div>
                                     </div>
 
-                                    <!-- Email Address -->
-                                    <div class="mb-3 row">
-                                        <label for="email" class="col-sm-4 col-form-label">Email Address <span
-                                                class="text-danger">*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="email" class="form-control" id="email"
-                                                placeholder="Enter here">
-                                        </div>
-                                    </div>
 
-                                    <!-- City -->
-                                    <div class="mb-3 row">
-                                        <label for="city" class="col-sm-4 col-form-label">City <span
-                                                class="text-danger">*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="city" placeholder="Enter here">
-                                        </div>
-                                    </div>
-
-                                    <!-- Religion -->
-                                    <div class="mb-3 row">
-                                        <label for="religion" class="col-sm-4 col-form-label">Religion</label>
-                                        <div class="col-sm-8">
-                                            <select class="form-select" id="religion">
-                                                <option selected>Select Here</option>
-                                                <option>Religion 1</option>
-                                                <option>Religion 2</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <!-- Profession -->
-                                    <div class="mb-3 row">
-                                        <label for="profession" class="col-sm-4 col-form-label">Profession</label>
-                                        <div class="col-sm-8">
-                                            <select class="form-select" id="profession">
-                                                <option selected>Select Here</option>
-                                                <option>Profession 1</option>
-                                                <option>Profession 2</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-                                <!-- Right Column -->
-                                <div class="col-md-6">
-
-                                    <!-- Gender -->
-                                    <div class="mb-3 row">
-                                        <label for="gender" class="col-sm-4 col-form-label">Gender <span
-                                                class="text-danger">*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="gender"
-                                                placeholder="Enter here">
-                                        </div>
-                                    </div>
-
-                                    <!-- Phone Number -->
-                                    <div class="mb-3 row">
-                                        <label for="phone" class="col-sm-4 col-form-label">Phone Number <span
-                                                class="text-danger">*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="phone" placeholder="Enter here">
-                                        </div>
-                                    </div>
-
-                                    <!-- Country -->
-                                    <div class="mb-3 row">
-                                        <label for="country" class="col-sm-4 col-form-label">Country <span
-                                                class="text-danger">*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="country"
-                                                placeholder="Enter here">
-                                        </div>
-                                    </div>
-
-                                    <!-- State/Province -->
-                                    <div class="mb-3 row">
-                                        <label for="state" class="col-sm-4 col-form-label">State/Province <span
-                                                class="text-danger">*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="state" placeholder="Enter here">
-                                        </div>
-                                    </div>
-
-                                    <!-- Education -->
-                                    <div class="mb-3 row">
-                                        <label for="education" class="col-sm-4 col-form-label">Education</label>
-                                        <div class="col-sm-8">
-                                            <select class="form-select" id="education">
-                                                <option selected>Select Here</option>
-                                                <option>High School</option>
-                                                <option>Bachelor's Degree</option>
-                                                <option>Master's Degree</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <!-- Profile Photo -->
-                                    <div class="mb-3 row">
-                                        <label for="profilePhoto" class="col-sm-4 col-form-label">Profile Photo <span
-                                                class="text-danger">*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="file" class="form-control" id="profilePhoto">
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 
